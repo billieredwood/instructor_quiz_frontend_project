@@ -43,14 +43,14 @@ public class QuizController {
         }
     }
 
-//    @PostMapping
-//    public ResponseEntity<Quiz> makeNewQuiz(@RequestBody QuizDTO quizDTO){
-//        try {
-//            return new ResponseEntity<>(quizService.addNewQuiz(quizDTO), HttpStatus.CREATED);
-//            } catch (Exception e){
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//        }
-//    }
+    @PostMapping
+    public ResponseEntity<Quiz> makeNewQuiz(@RequestBody QuizDTO quizDTO){
+        try {
+            return new ResponseEntity<>(quizService.addNewQuiz(quizDTO), HttpStatus.CREATED);
+            } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> deleteQuizById(@PathVariable Long id){
