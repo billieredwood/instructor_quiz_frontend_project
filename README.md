@@ -3,11 +3,12 @@
 
 ### A high-level description of the project's aims
 
-**Personas:**
+*Personas:*
 -
 -
 -
 -
+_
 
 ### The names and versions of any libraries used
 
