@@ -3,7 +3,7 @@
 
 ### A high-level description of the project's aims
 
-Personas:
+**Personas:**
 -
 -
 -
