@@ -7,8 +7,8 @@ import { createBrowserRouter, RouterProvider, Link} from "react-router-dom";
 
 const QuizContainer = () => {
     const [stateUserName, setStateUserName] = useState("")
-    const [currentQResponse, setCurrentQResponse] = useState(null) //null as opposed to false bc a is fed int as a response
-    const [currentQ, setCurrentQ] = useState(null)
+    const [currentQResponse, setCurrentQResponse] = useState({}) //null as opposed to false bc a is fed int as a response
+    const [currentQ, setCurrentQ] = useState({})
     const [qAnswered, setQAnswered] = useState([])
     const [listOfQs, setListOfQs] = useState([])
     const [quizFinished, setQuizFinished] = useState(null)
@@ -30,6 +30,16 @@ const QuizContainer = () => {
         loadQuizData()
     }, [])
 
+
+
+
+
+    const handleQResponse = ((event) => {
+        event.preventDefault();
+        const buttonQResponseClick = event.target.value
+        setCurrentQResponse(buttonQResponseClick)
+    })
+
     const quizRoutes = createBrowserRouter ([
         {
             path: "/",
@@ -37,7 +47,11 @@ const QuizContainer = () => {
             children: [
                 {
                     path: "/question",
-                    element: < Question currentQ = {currentQ} />
+                    element: < Question 
+                        question = {currentQ} 
+                        onButtonClick = {handleQResponse}
+                    />
+
                 }
 
             ]
