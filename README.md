@@ -14,7 +14,7 @@ Contributors to this project include:
 
 
 ## Project aims:
-The application is designed to track user responses to a set of questions within a single, short-form quiz. The tracked input ranges from selected response-types of A to D across each question and is  calculated to match the user to the BNTA Trainer whose personality aligns with their most commonly selected response-type. The most common of the scores is then displayed to the user on the Results page, following completion of the quiz. 
+The application is designed to track user responses to a set of questions within a single, short-form quiz. The tracked input ranges from selected response-types of A to D across each question and is accumulated to match the user to the BNTA Trainer whose personality aligns with their most commonly selected response-type. Following completion of the quiz, this value - being the most common of the scores - is then displayed to the user on the Results page along with their Trainer match's bio.
 
 The application's UX was developed with consideration given to BNTA student, alumni & colleague persona types, with ages therefore spanning multi-generations.
 
