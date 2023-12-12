@@ -16,7 +16,7 @@ Contributors to this project include:
 ## Project aims:
 The application is designed to track user responses to a set of questions within a single, short-form quiz. The tracked input is  calculated to match the user to the BNTA Trainer whose personality  aligns with their most commonly selected responses. The most common of the scores is then displayed to the user on the Results page, following completion of the quiz. 
 
-The application's UX was developed with consideration given to persona types that exclusively relate to BNTA students, alumni & colleagues, with ages therefore spanning multi-generations.
+The application's UX was developed with consideration given to BNTA student, alumni & colleague persona types, with ages therefore spanning multi-generations.
 
 The app is aimed to appeal to users of varied educational backgrounds, seeking a fun, engaging and simple to use short-form gaming experience that can be shared with their BNTA peers.
 
