@@ -1,11 +1,14 @@
+import Home from "../components/Home";
 import Question from "../components/Question";
 import ResultsPage from "../components/ResultsPage";
 import { useState, useEffect } from "react";
+import { createBrowserRouter, RouterProvider, Link} from "react-router-dom";
 
 
 const QuizContainer = () => {
     const [stateUserName, setStateUserName] = useState("")
     const [currentQResponse, setCurrentQResponse] = useState(null) //null as opposed to false bc a is fed int as a response
+    const [currentQ, setCurrentQ] = useState(null)
     const [qAnswered, setQAnswered] = useState([])
     const [listOfQs, setListOfQs] = useState([])
     const [quizFinished, setQuizFinished] = useState(null)
@@ -18,18 +21,35 @@ const QuizContainer = () => {
         })
         const quizData = await response.json()
         console.log(quizData)
-
-
+        setCurrentQ(quizData.questions[0])
+        console.log(quizData.questions[0])
     }
+
+
     useEffect(() => {
         loadQuizData()
     }, [])
 
+    const quizRoutes = createBrowserRouter ([
+        {
+            path: "/",
+            element: <Home />,
+            children: [
+                {
+                    path: "/question",
+                    element: < Question currentQ = {currentQ} />
+                }
+
+            ]
+            
+        }
+    ])
+
     return (  
         <>
-            <h1>BNTA Trainers Quiz!</h1>
-            <Question/>
-            <ResultsPage/>
+            {/* <h1><Link to = "/question">BNTA Trainers Quiz!</Link></h1> */}
+           
+            <RouterProvider router = {quizRoutes}/>
         </>
     );
 }
