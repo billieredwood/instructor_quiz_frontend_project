@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import logo from "../logo.svg";
 
-const Home = () => {
+const Home = ({handleStartQuiz}) => {
     const location = useLocation();
  
     const renderHomePage = location.pathname === '/';
@@ -22,7 +22,7 @@ const Home = () => {
                         placeholder="Enter a username" 
                         type="text"
                     />
-                    <button><Link to="/question">Start quiz</Link></button>
+                    <button onClick={handleStartQuiz}><Link to="/question">Start quiz</Link></button>
                 </form>
             </section>
          </>
