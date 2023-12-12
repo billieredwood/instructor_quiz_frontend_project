@@ -10,6 +10,8 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -36,3 +38,29 @@
     transform: rotate(360deg);
   }
 }
+
+.homepage, h1, p{
+  text-align: center;
+}
+
+.main-homepage{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#homepage-form{
+  display: flex;
+  width: 20%;
+  margin: auto;
+  flex-direction: column;
+  align-content: center;
+}
+
+#homepage-form button{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 20px;
+} 
