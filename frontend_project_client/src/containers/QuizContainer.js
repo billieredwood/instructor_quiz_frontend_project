@@ -17,7 +17,7 @@ const QuizContainer = () => {
     const [quizFinished, setQuizFinished] = useState(null)
     const [currentQuiz, setCurrentQuiz] = useState(null)
     const [questionIndex, setQuestionIndex] = useState(0)
-    const [trainersList, setTrainersList] = useState({})
+    const [trainersList, setTrainersList] = useState([])
     const [trainerScores, setTrainerScores] = useState({})
     
 
@@ -47,6 +47,12 @@ const QuizContainer = () => {
         } 
     }, [questionIndex])
 
+    useEffect(() =>{
+        if(trainerScores.length === 4){
+            createTrainersList();
+        }
+    }, [trainerScores])
+
 
     const startQuiz = async () => {
         if (currentQuiz) {
@@ -73,7 +79,6 @@ const QuizContainer = () => {
         })
         localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
         setQuestionIndex(questionIndex+1)
-
     }
 
     const finishQuiz= async () => {
@@ -89,31 +94,42 @@ const QuizContainer = () => {
         console.log(quizData)
 
         const scores = [
-            ["anna", quizData.annaScore],
-            ["colin", quizData.colinScore],
-            ["thibyaa", quizData.thibyaaScore],
-            ["zsolt", quizData.zsoltScore]
+            ["Anna", quizData.annaScore],
+            ["Colin", quizData.colinScore],
+            ["Thibyaa", quizData.thibyaaScore],
+            ["Zsolt", quizData.zsoltScore]
         ]
 
-        const scoresObject = {
-            anna: quizData.annaScore,
-            colin: quizData.colinScore,
-            thibyaa: quizData.thibyaaScore,
-            zsolt: quizData.zsoltScore
-    }
+        // const scoresObject = {
+        //     Anna: quizData.annaScore,
+        //     Colin: quizData.colinScore,
+        //     Thibyaa: quizData.thibyaaScore,
+        //     Zsolt: quizData.zsoltScore
+        // }
 
-        const sortedScores = Object.entries(scoresObject).sort((a,b)=>b[1]-a[1])
+        const sortedScores = scores.sort((a,b)=>b[1]-a[1])
         console.log(sortedScores)
-        console.log(Object.entries(scoresObject));
-        console.log(scores)
-
         setTrainerScores(sortedScores)
-
-        
     }
 
-    const displayResult =async ()=>{
-        
+    const displayResult = async (trainer) => {
+        const trainerResponse = await fetch (`http://localhost:8080/quizzes/${currentQuiz.id}/result?trainerName=${trainer[0]}`)
+        console.log(trainerResponse)
+        const trainerData = await trainerResponse.json()
+        console.log(trainerData)
+        const trainerObject = {
+            name: trainer[0],
+            score: trainer[1],
+            message: trainerData
+        }
+        console.log(trainerObject)
+        setTrainersList([...trainersList, trainerObject])
+    }
+
+    const createTrainersList = () => {
+        // trainerScores.forEach(trainer => {
+        displayResult(trainerScores[0])
+        // });
     }
 
 
@@ -160,7 +176,7 @@ const QuizContainer = () => {
                 }, 
                 {
                 path: "/question/results",
-                element: < ResultsPage />
+                element: < ResultsPage results={trainersList}/>
                 }
             ]
         }
