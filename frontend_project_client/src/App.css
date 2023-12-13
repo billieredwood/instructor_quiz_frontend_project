@@ -28,27 +28,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.option {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 15px; /* Increased padding for larger buttons */
-  border: none;
-  border-radius: 20px; /* Increased border-radius for a more bubbly look */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for a subtle interaction */
-}
-
-.option:hover {
-  background-color: #45a049;
-  transform: scale(1.05); /* Slightly scale the button on hover */
-}
-
 .result {
   margin-top: 20px;
   font-weight: bold;
