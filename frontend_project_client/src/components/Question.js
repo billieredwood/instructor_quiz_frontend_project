@@ -1,20 +1,27 @@
 import { useState } from "react";
 import Home from "./Home";
+import { Link, useNavigate } from "react-router-dom";
 
 const Question = ({question, onButtonClick, postAnswer, questionIndex}) => {
     
+    const navigate = useNavigate();
+
     const handleFormSubmit = ((event) => {
         event.preventDefault();
-        postAnswer()
+        if(questionIndex < 2) {
+            postAnswer() 
+        } else {
+            navigate("/question/results");
+        } 
     })
 
     // const submitButton = () => {
     //     if(questionIndex < 2) {
     //         return <button type="submit"> Next </button>
     //     } else {
-
+    //         return <button type="submit"> Finish Quiz! </button>
     //     }
-    //     }
+        
     // }
 
     return (  

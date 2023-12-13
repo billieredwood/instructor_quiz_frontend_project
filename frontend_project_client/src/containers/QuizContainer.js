@@ -109,11 +109,12 @@ const QuizContainer = () => {
                         postAnswer = {postAnswer}
                         questionIndex = {questionIndex}
                     />
-
+                }, 
+                {
+                path: "/question/results",
+                element: < ResultsPage />
                 }
-
             ]
-            
         }
     ])
 
