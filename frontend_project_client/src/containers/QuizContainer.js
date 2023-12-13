@@ -18,6 +18,7 @@ const QuizContainer = () => {
     const [currentQuiz, setCurrentQuiz] = useState(null)
     const [questionIndex, setQuestionIndex] = useState(0)
     const [trainersList, setTrainersList] = useState({})
+    const [trainerScores, setTrainerScores] = useState({})
     
 
     const loadQuizData = async () => {
@@ -86,11 +87,34 @@ const QuizContainer = () => {
         const response = await fetch (`http://localhost:8080/quizzes/${currentQuiz.id}`)
         const quizData = await response.json()
         console.log(quizData)
+
+        const scores = [
+            ["anna", quizData.annaScore],
+            ["colin", quizData.colinScore],
+            ["thibyaa", quizData.thibyaaScore],
+            ["zsolt", quizData.zsoltScore]
+        ]
+
+        const scoresObject = {
+            anna: quizData.annaScore,
+            colin: quizData.colinScore,
+            thibyaa: quizData.thibyaaScore,
+            zsolt: quizData.zsoltScore
     }
 
-    // const displayResult =async ()=>{
+        const sortedScores = Object.entries(scoresObject).sort((a,b)=>b[1]-a[1])
+        console.log(sortedScores)
+        console.log(Object.entries(scoresObject));
+        console.log(scores)
+
+        setTrainerScores(sortedScores)
+
         
-    // }
+    }
+
+    const displayResult =async ()=>{
+        
+    }
 
 
     const handleStartQuiz = () => {
