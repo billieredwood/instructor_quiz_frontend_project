@@ -30,6 +30,14 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 
 ### Links to any relevant diagrams such as wireframes or component diagrams
 
+### Persona 
+- BNTA students come from a diverse background, and are passionate and curious individuals which embarked on the journey of fullstack development through a challenging but rewarding bootcamp.
+- Students are seeking balance and believes that a positive and supportive community is key to a successful learning experience.
+- A fun and interactive app is crucial to help students to unwind and energize after long coding sessions. 
+- They are seeking a platform that goes beyond coding – a priority is to connect with fellow peers that are like-minded, to share experiences of the ups and downs of their coding journey.
+- A visually appealing app is essential with colorful and lively interfaces.
+- Students values an app that is easy to navigate. After a day of intense coding, they wants a seamless experience without any unnecessary complexities.
+
 
 
 ## Details of the project's MVP and any extensions covered:
