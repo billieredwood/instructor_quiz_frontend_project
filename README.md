@@ -34,15 +34,16 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 
 ## Details of the project's MVP and any extensions covered:
 ## MVP
-- Enable the user to input a username & select the option to start a quiz.
+- Enable the user to select the option to start a quiz from the homepage.
 - Enable the user to play a quiz comprising no more than 3 questions.
-- Enable the user to select answers to the quiz's questions and navigate to the next question in the quiz. ✅
-- Add functionality to save user input to each of the quiz's questions.
+- Enable the user to select answers to the quiz's questions and navigate to its next question using a 'next' button. ✅
+- Add functionality to save the above user input to each of the quiz's questions.
 - Add functionality to calculate the most frequently selected answers in the quiz.
 - Add routes to create a homepage, quiz game page and results page.✅
 - Enable consistent styling across the application using CSS.
 
 ## Extensions
+- Enable the user to input a username that is associated & select the option to start a quiz.
 - Replace the button to 'learn more' with a drop down style display on the Results page's matched-trainer bio section.
 - Add a back button to each question on the Quiz page to enable the user navigate to the previous question with the quiz.
 - Add a menu of question number buttons from which the user can select specific questions to revisit & edit their answers to before quiz completion.
