@@ -8,6 +8,15 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex}) => {
         postAnswer()
     })
 
+    // const submitButton = () => {
+    //     if(questionIndex < 2) {
+    //         return <button type="submit"> Next </button>
+    //     } else {
+
+    //     }
+    //     }
+    // }
+
     return (  
         <>
             <h2>Question {questionIndex+1}: {question.question}</h2>
@@ -18,7 +27,7 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex}) => {
                     <button onClick={onButtonClick} value="C"> {question.optionC} </button>
                     <button onClick={onButtonClick} value="D"> {question.optionD} </button>
                 </div>
-                <button type="submit"> Next </button>
+                <button type="submit"> {questionIndex < 2 ? "Next" : "Finish Quiz!" } </button>
             </form>
             
             
