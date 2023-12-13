@@ -22,10 +22,10 @@ const Home = ({handleStartQuiz}) => {
                         placeholder="Enter a username" 
                         type="text"
                     />
-                    <button onClick={handleStartQuiz}><Link to="/question">Start quiz</Link></button>
+                    <Link to="/question" onClick={handleStartQuiz}><button >Start quiz</button></Link>
                 </form>
             </section>
-         </>
+        </>
         )}
         <Outlet />
     </>

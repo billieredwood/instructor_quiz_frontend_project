@@ -14,9 +14,10 @@ const QuizContainer = () => {
     const [currentQ, setCurrentQ] = useState({})
     // const [qAnswered, setQAnswered] = useState([])
     // const [listOfQs, setListOfQs] = useState([])
-    // const [quizFinished, setQuizFinished] = useState(null)
+    const [quizFinished, setQuizFinished] = useState(null)
     const [currentQuiz, setCurrentQuiz] = useState(null)
     const [questionIndex, setQuestionIndex] = useState(0)
+    const [trainersList, setTrainersList] = useState({})
     
 
     const loadQuizData = async () => {
@@ -36,9 +37,13 @@ const QuizContainer = () => {
     }, [])
 
     useEffect(() => {
+        console.log(questionIndex);
         if(currentQuiz){
             setCurrentQ(currentQuiz.questions[questionIndex])
         }
+        if(questionIndex > 2) {
+            finishQuiz()
+        } 
     }, [questionIndex])
 
 
@@ -59,7 +64,7 @@ const QuizContainer = () => {
 
     const postAnswer = async () => {
         console.log(currentQResponse)
-        console.log(currentQuiz)
+        // console.log(currentQuiz)
         const response = await fetch(`http://localhost:8080/quizzes/takeQuiz/${currentQuiz.id}`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -67,8 +72,25 @@ const QuizContainer = () => {
         })
         localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
         setQuestionIndex(questionIndex+1)
-        // const data = await response.json()
+
     }
+
+    const finishQuiz= async () => {
+        const response = await fetch (`http://localhost:8080/quizzes/finishQuiz/${currentQuiz.id}`)
+        // const quizData = await response.json()
+        console.log(response);
+        checkQuiz()
+    }
+
+    const checkQuiz= async () => {
+        const response = await fetch (`http://localhost:8080/quizzes/${currentQuiz.id}`)
+        const quizData = await response.json()
+        console.log(quizData)
+    }
+
+    // const displayResult =async ()=>{
+        
+    // }
 
 
     const handleStartQuiz = () => {
@@ -108,6 +130,8 @@ const QuizContainer = () => {
                         onButtonClick = {handleQResponse}
                         postAnswer = {postAnswer}
                         questionIndex = {questionIndex}
+                        finishQuiz = {finishQuiz}
+                        checkQuiz = {checkQuiz}
                     />
                 }, 
                 {

@@ -2,16 +2,15 @@ import { useState } from "react";
 import Home from "./Home";
 import { Link, useNavigate } from "react-router-dom";
 
-const Question = ({question, onButtonClick, postAnswer, questionIndex}) => {
+const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQuiz, checkQuiz}) => {
     
     const navigate = useNavigate();
 
     const handleFormSubmit = ((event) => {
         event.preventDefault();
-        if(questionIndex < 2) {
-            postAnswer() 
-        } else {
-            navigate("/question/results");
+        postAnswer()
+        if(questionIndex >= 2) {
+            navigate("/question/results")
         } 
     })
 
