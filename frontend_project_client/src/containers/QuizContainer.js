@@ -16,8 +16,7 @@ const QuizContainer = () => {
     // const [listOfQs, setListOfQs] = useState([])
     // const [quizFinished, setQuizFinished] = useState(null)
     const [currentQuiz, setCurrentQuiz] = useState(null)
-    // const [questionIndex, setQuestionIndex] = useState(0)
-    // const [quiz, setQuiz] = useState({})
+    const [questionIndex, setQuestionIndex] = useState(0)
     
 
     const loadQuizData = async () => {
@@ -30,15 +29,26 @@ const QuizContainer = () => {
         setCurrentQ(quizData.questions[0])
         setCurrentQuiz(quizData)
         // console.log(currentQuiz)
-        console.log(quizData) 
     }
+
+    useEffect(() =>{
+        loadQuizData();
+    }, [])
+
+    useEffect(() => {
+        if(currentQuiz){
+            setCurrentQ(currentQuiz.questions[questionIndex])
+        }
+    }, [questionIndex])
 
 
     const startQuiz = async () => {
         if (currentQuiz) {
             const quiz = await fetch(`http://localhost:8080/quizzes/startQuiz/${currentQuiz.id}`);
+            console.log(quiz)
             // const data = await quiz.json()
-            localStorage.setItem("questionIndex", 0);
+            localStorage.setItem("questionIndex", 0)
+            setQuestionIndex(0);
         }
     }
     
@@ -54,31 +64,32 @@ const QuizContainer = () => {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(currentQResponse)
-        
         })
+        localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
+        setQuestionIndex(questionIndex+1)
         // const data = await response.json()
     }
 
 
-    const handleStartQuiz = async () => {
-        await loadQuizData(); 
+    const handleStartQuiz = () => {
         if (currentQuiz) {
             startQuiz();
         }
     }
     
 
-    const handleFormSubmit = ((event) => {
-        event.preventDefault();
-        postAnswer()
-        localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
-    })
+    // const handleFormSubmit = ((event) => {
+    //     console.log(event)
+    //     event.preventDefault();
+    //     postAnswer()
+    //     localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
+    // })
 
     const handleQResponse = ((event) => {
         event.preventDefault();
         const buttonQResponseClick = event.target.value
         const updatedResponse = {...currentQResponse}
-        updatedResponse.questionNumber = localStorage.getItem("questionIndex")
+        updatedResponse.questionNumber = questionIndex
         updatedResponse.userAnswer = buttonQResponseClick
         setCurrentQResponse(updatedResponse)
         // console.log(currentQResponse)
@@ -95,7 +106,8 @@ const QuizContainer = () => {
                     element: < Question 
                         question = {currentQ} 
                         onButtonClick = {handleQResponse}
-                        onFormSubmit = {handleFormSubmit}
+                        postAnswer = {postAnswer}
+                        questionIndex = {questionIndex}
                     />
 
                 }

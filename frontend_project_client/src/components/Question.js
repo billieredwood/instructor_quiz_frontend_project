@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-const Question = ({question, onButtonClick, onFormSubmit}) => {
-
-  
+const Question = ({question, onButtonClick, postAnswer, questionIndex}) => {
+    
+    const handleFormSubmit = ((event) => {
+        event.preventDefault();
+        postAnswer()
+    })
 
     return (  
         <>
-            <h2>{question.question}</h2>
-            <form  onSubmit={onFormSubmit}> 
+            <h2>Question {questionIndex+1}: {question.question}</h2>
+            <form  onSubmit={handleFormSubmit}> 
                 <div>
                     <button onClick={onButtonClick} value="A"> {question.optionA} </button>
                     <button onClick={onButtonClick} value="B"> {question.optionB} </button>
