@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Home from "./Home";
 
 const Question = ({question, onButtonClick, onFormSubmit}) => {
 
@@ -8,7 +9,7 @@ const Question = ({question, onButtonClick, onFormSubmit}) => {
         <>
             <h2>{question.question}</h2>
             <form  onSubmit={onFormSubmit}> 
-                <div>
+                <div id = "options">
                     <button onClick={onButtonClick} value="A"> {question.optionA} </button>
                     <button onClick={onButtonClick} value="B"> {question.optionB} </button>
                     <button onClick={onButtonClick} value="C"> {question.optionC} </button>
