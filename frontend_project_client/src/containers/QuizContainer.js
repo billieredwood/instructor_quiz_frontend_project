@@ -37,6 +37,10 @@ const QuizContainer = () => {
         loadQuizData();
     }, [])
 
+    useEffect(() =>{
+
+    }, [trainersList])
+
     useEffect(() => {
         console.log(questionIndex);
         if(currentQuiz){
@@ -185,10 +189,10 @@ const QuizContainer = () => {
     return (  
         <>
             {/* <h1><Link to = "/question">BNTA Trainers Quiz!</Link></h1> */}
-           
+            
             <RouterProvider router = {quizRoutes}/>
         </>
     );
 }
- 
+
 export default QuizContainer;

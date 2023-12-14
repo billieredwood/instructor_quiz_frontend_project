@@ -4,6 +4,10 @@ const ResultsPage = ({ results }) => {
 
     console.log(results)
 
+    // if (!results.length){
+    //     return <p>Loading...</p>
+    // }
+
     return (  
         <>
             <h2>You are {results[0].name}!</h2>
