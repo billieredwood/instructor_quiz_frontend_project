@@ -1,19 +1,23 @@
 import { Link, Outlet } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import trainers from "../trainers.jpg"
 
 
 const Home = ({handleStartQuiz}) => {
     const location = useLocation();
+    const navigate = useNavigate()
     console.log(trainers)
- 
+
+    const handleHome = ()=>{
+        navigate("/")
+    }
+
     const renderHomePage = location.pathname === '/';
     return (
     <>
-        <Link to = "/"><p>Home</p></Link>
+        <header><button onClick={handleHome} className="homepage">Which Trainer Are You?</button></header>
         {renderHomePage && (
         <>
-            <header className="homepage">Which Trainer Are You?</header>
             <hr/>
             <section className="main-homepage">
                 <h1 className="home">BNTA TRAINER QUIZ</h1>

@@ -109,8 +109,23 @@ button[type="submit"]:hover {
 }
 
 .homepage {
+  /* width: fit-content; */
+  /* margin: auto; */
+  padding: 10px;
   text-align: center;
 
+  border: none;
+  border-radius: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  position:absolute top;
+
+}
+.homepage:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  border: solid #4CAF50;
 }
 
 #username {
