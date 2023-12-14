@@ -8,6 +8,7 @@ const Home = ({handleStartQuiz}) => {
     const renderHomePage = location.pathname === '/';
     return (
     <>
+        <Link to = "/"><p>Home</p></Link>
         {renderHomePage && (
         <>
             <header className="homepage">Which Trainer Are You?</header>

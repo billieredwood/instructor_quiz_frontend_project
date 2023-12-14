@@ -5,6 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQuiz, checkQuiz}) => {
     
     const navigate = useNavigate();
+    
+    if (!question){
+        return <p>Loading...</p>
+    }
+
+
 
     const handleFormSubmit = ((event) => {
         event.preventDefault();

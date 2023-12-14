@@ -30,32 +30,44 @@ const QuizContainer = () => {
         const quizData = await response.json()
         setCurrentQ(quizData.questions[0])
         setCurrentQuiz(quizData)
+
         // console.log(currentQuiz)
     }
 
     useEffect(() =>{
-        loadQuizData();
-    }, [])
 
-    useEffect(() =>{
+        if(currentQuiz){
+            startQuiz()
+        }
+    }, [currentQuiz])
 
-    }, [trainersList])
+
 
     useEffect(() => {
         console.log(questionIndex);
-        if(currentQuiz){
-            setCurrentQ(currentQuiz.questions[questionIndex])
-        }
         if(questionIndex > 2) {
             finishQuiz()
-        } 
+        }
+        else if(currentQuiz){
+            setCurrentQ(currentQuiz.questions[questionIndex])
+        }
+
     }, [questionIndex])
 
     useEffect(() =>{
         if(trainerScores.length === 4){
             createTrainersList();
+            console.log("scores");
         }
     }, [trainerScores])
+
+    useEffect(() =>{
+        console.log(trainersList);
+        if (trainersList.length>0 && trainersList.length<4){
+            displayResult(trainerScores[trainersList.length])
+        }
+
+    }, [trainersList])
 
 
     const startQuiz = async () => {
@@ -98,10 +110,10 @@ const QuizContainer = () => {
         console.log(quizData)
 
         const scores = [
-            ["Anna", quizData.annaScore],
-            ["Colin", quizData.colinScore],
-            ["Thibyaa", quizData.thibyaaScore],
-            ["Zsolt", quizData.zsoltScore]
+            ["Anna", quizData.annaScore, "You are fuelled by medium brewed tea with just a *drop* of milk, hobnobs & jaffa cakes."],
+            ["Colin", quizData.colinScore, "…Or in other words, a \“caffeine-overdosed golden retriever.\”"],
+            ["Thibyaa", quizData.thibyaaScore, "ou are a reserved, tortoise-loving individual of few words."],
+            ["Zsolt", quizData.zsoltScore, "Some might say, you are a \“looks like a cinnamon roll could kill you\” kinda person."]
         ]
 
         // const scoresObject = {
@@ -124,7 +136,8 @@ const QuizContainer = () => {
         const trainerObject = {
             name: trainer[0],
             score: trainer[1],
-            message: trainerData
+            message: trainerData.message,
+            personality: trainer[2]
         }
         console.log(trainerObject)
         setTrainersList([...trainersList, trainerObject])
@@ -132,15 +145,23 @@ const QuizContainer = () => {
 
     const createTrainersList = () => {
         // trainerScores.forEach(trainer => {
-        displayResult(trainerScores[0])
+            console.log(trainerScores);
+            displayResult(trainerScores[0])
+            // displayResult(trainerScores[1])
+            // displayResult(trainerScores[2])
+            // displayResult(trainerScores[3])
         // });
     }
 
 
     const handleStartQuiz = () => {
-        if (currentQuiz) {
-            startQuiz();
-        }
+        // if (currentQuiz) {
+        //     startQuiz();
+        // }
+        
+        setCurrentQ(null)
+        setTrainersList([])
+        loadQuizData();
     }
     
 
