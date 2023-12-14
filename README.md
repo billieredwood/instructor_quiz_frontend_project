@@ -57,7 +57,7 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 ## Details of the project's MVP and any extensions covered:
 ## MVP
 - Enable the user to select the option to start a quiz from the homepage. ✅
-- Enable the user to play a quiz comprising of a set amount of questions. ✅
+- Enable the user to play a quiz comprising a set amount of questions. ✅
 - Enable the user to select answers to the quiz's questions and navigate to its next question using a 'next' button. ✅
 - Add functionality to save the above user input to each of the quiz's questions. ✅
 - Add functionality to calculate the most frequently selected answers in the quiz. ✅ 
