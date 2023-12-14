@@ -23,10 +23,26 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 
 ## The names and versions of any libraries used
 - [Backend_Project_API](https://github.com/AanisN10/Backend_Project_API) (Using: Spring Boot, Spring Data JPA, Spring Web, Postgresql)
+-  React (and React Router Dom)
 
 ## Step-by-step setup instructions
-1. Open Git Hub and navigate to 
-
+1. Clone the project Git Hub repository in your local directory from:
+   ```
+   https://github.com/billieredwood/instructor_quiz_frontend_project
+   ```
+2. Open the Back-End Project API and open the WhoAreYou folder in IntelliJ and navigate to the terminal; from there, create the local database with the following command:
+   ```
+   createdb WhoAreYou
+   ```
+   &
+   in the WhoAreYouApplication class, run the project.
+3. Open the front-end project client in VSCode and from the Terminal, insert the following commands to start the applciation in the browser:
+4. ```
+   npm i
+   npm i react-router-dom
+   npm start
+   ```
+5. Play your first quiz.
 
 ### Persona 
 - BNTA students come from a diverse background, and are passionate and curious individuals which embarked on the journey of fullstack development through a challenging but rewarding bootcamp.
@@ -40,16 +56,17 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 
 ## Details of the project's MVP and any extensions covered:
 ## MVP
-- Enable the user to select the option to start a quiz from the homepage.
-- Enable the user to play a quiz comprising no more than 3 questions.
+- Enable the user to select the option to start a quiz from the homepage. ✅
+- Enable the user to play a quiz comprising of a set amount of questions. ✅
 - Enable the user to select answers to the quiz's questions and navigate to its next question using a 'next' button. ✅
-- Add functionality to save the above user input to each of the quiz's questions.
-- Add functionality to calculate the most frequently selected answers in the quiz.
+- Add functionality to save the above user input to each of the quiz's questions. ✅
+- Add functionality to calculate the most frequently selected answers in the quiz. ✅ 
 - Add routes to create a homepage, quiz game page and results page.✅
-- Enable consistent styling across the application using CSS.
+- Enable consistent styling across the application using CSS. ✅
 
 ## Extensions
 - Add a ranking of the user's scores for each BNTA trainer to the Results page, underneath their trainer match. ✅
+- Add a homepage navigation button. ✅
 - Enable the user to input a username that is associated & select the option to start a quiz.
 - Replace the button to 'learn more' with a drop down style display on the Results page's matched-trainer bio section.
 - Add a back button to each question on the Quiz page to enable the user navigate to the previous question with the quiz.
