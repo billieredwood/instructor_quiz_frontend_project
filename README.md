@@ -22,11 +22,10 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 
 
 ## The names and versions of any libraries used
-
-
+- [Backend_Project_API](https://github.com/AanisN10/Backend_Project_API) (Using: Spring Boot, Spring Data JPA, Spring Web, Postgresql)
 
 ## Step-by-step setup instructions
-
+1. Open Git Hub and navigate to 
 
 
 ### Persona 
