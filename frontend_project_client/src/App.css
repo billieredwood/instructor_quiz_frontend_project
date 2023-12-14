@@ -1,6 +1,12 @@
+
+@import url('https://fonts.cdnfonts.com/css/nrt-reg');
+
+
+
+
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f7f7f7;
+  background-color: #e3dceb;
   color: #333;
   margin: 0;
   padding: 0;
@@ -21,6 +27,7 @@ body {
 
 h1 {
   color: #4CAF50;
+  text-align: center;
 }
 
 .question {
@@ -90,8 +97,32 @@ button[type="submit"]:hover {
 }
 
 .trainers {
-  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
-  height: auto; /* Maintain the image's aspect ratio */
+  max-width: 40%; /* Ensure the image doesn't exceed its natural size */
+  height: 60%; /* Maintain the image's aspect ratio */
   display: block; /* Remove any extra spacing around the image */
   margin: 0 auto; /* Center the image horizontally */
+}
+
+.about-text {
+  text-align: center;
+  font-family:'NRT Reg', sans-serif;
+}
+
+.homepage {
+  text-align: center;
+
+}
+
+#username {
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+#homepage-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

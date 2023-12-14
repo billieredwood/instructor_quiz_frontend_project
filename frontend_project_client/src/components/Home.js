@@ -1,11 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import logo from "../logo.svg";
 import trainers from "../trainers.jpg"
 
 
 const Home = ({handleStartQuiz}) => {
     const location = useLocation();
+    console.log(trainers)
  
     const renderHomePage = location.pathname === '/';
     return (
@@ -16,11 +16,11 @@ const Home = ({handleStartQuiz}) => {
             <hr/>
             <section className="main-homepage">
                 <h1 className="home">BNTA TRAINER QUIZ</h1>
-                <img className="trainers" src="/trainers.jpg" alt="Image of trainers" />
-                <p>Discover your BNTA trainer match with our interactive quiz!</p>
-                <p>Enter your username and click start:</p>
+                <img className="trainers" src={trainers} alt="Image of trainers" />
+                <p className="about-text"> Discover your BNTA trainer match with our interactive quiz!</p>
+                <p className="about-text"> Enter your username and click start:</p>
                 <form id="homepage-form">
-                    <input 
+                    <input id="username"
                         placeholder="Enter a username" 
                         type="text"
                     />
