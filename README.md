@@ -84,3 +84,7 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 ---------
 
 ![image](https://github.com/billieredwood/instructor_quiz_frontend_project/assets/131786678/7b11c8be-f438-4546-b8b5-56e2cdd2cda8)
+
+### UX Design
+![Copy of diagram](https://github.com/billieredwood/instructor_quiz_frontend_project/assets/131786678/3417ede8-530e-4bc0-b89b-904b747dbdc8)
+
