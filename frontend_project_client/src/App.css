@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: auto;
 }
 
@@ -123,10 +123,7 @@ button[type="submit"]:hover {
   background-color: #CB7261;
   color: white;
   text-decoration: none;
- overflow: auto;
-  
-  
- 
+  overflow: auto;
 }
 
 .homepage:hover {
@@ -164,7 +161,6 @@ li {
   justify-content: space-evenly;
   border: solid  #f2b688;
   padding: 15px;
-  
   border-radius: 20px;
 }
 
@@ -219,11 +215,11 @@ li {
 }
 
 .results-container {
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 800px; /* Adjust the maximum width as needed */
   margin: 0 auto; /* Center the container horizontally */
   text-align: center; /* Center the text within the container */
   overflow: scroll;
-  min-height: 100vh
+  min-height: max-content;
 }
 
 .see-more-btn {
