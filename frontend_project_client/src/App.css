@@ -1,38 +1,154 @@
-.App {
+@import url('https://fonts.cdnfonts.com/css/nrt-reg');
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F3EEE8; /* Keep the existing background color */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #4CAF50;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Adjusted color scheme for a fun but subdued theme */
+.question, .option, .result, #options {
+  color: #242038;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.option {
+  background-color: #7c37ca;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.option:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#options {
+  /* background-color: #D9D0DE; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+  /* border-style: outset;
+  padding: 10px;
+  border-radius: 10px; */
+}
+
+button {
+  background-color: #fff;
+  color: #242038;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button[type="submit"] {
+  background-color: #F69044;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Retaining the original styling for trainers and about-text */
+.trainers {
+  max-width: 30%;
+  height: 15%;
+}
+
+.about-text {
+  text-align: center;
+  font-family: 'NRT Reg', sans-serif;
+}
+
+/* Styling for the homepage button */
+.homepage {
+  padding: 10px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background-color: #CB7261;
+  color: white;
+  text-decoration: none;
+  position: absolute top;
+}
+
+.homepage:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  border: solid #4CAF50;
+}
+
+#username {
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+#homepage-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.question{
+  color: #242038;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p,h1,h2,h3,h4{
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  display: grid;
+  justify-content: space-evenly;
+
 }
