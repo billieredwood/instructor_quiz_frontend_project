@@ -31,7 +31,7 @@ const ResultsPage = ({ results }) => {
         }
         
         const trainerImages = [...results[0].images].splice(1).map(path => {
-            return <img src = {path}/>
+            return <img id = "extraImages" src = {path}/>
         })
 
         // }else{
@@ -44,7 +44,7 @@ const ResultsPage = ({ results }) => {
     return (  
         <>
             <h2>You are {results[0].name}!</h2>
-            <img src = {results[0].images[0]}/>
+            <img id = "mainImage" src = {results[0].images[0]}/>
             <p>{results[0].personality}</p>
             {showMore &&  (
             <div>
@@ -52,7 +52,6 @@ const ResultsPage = ({ results }) => {
                 {trainerImages}
             </div>
             )}
-            
 
             
             <button className="see-more-btn" onClick={() => setShowMore(!showMore)}>

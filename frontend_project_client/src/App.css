@@ -196,3 +196,13 @@ li {
   padding: 10px;
 
 }
+
+#mainImage {
+  height: auto;
+  width:400px;
+}
+
+#extraImages {
+  height: 200px;
+  width:auto;
+}

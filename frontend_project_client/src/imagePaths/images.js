@@ -8,6 +8,10 @@ const annaImages = [
     require('../AnnaImages/AnnaDog1.jpeg'),
     require('../AnnaImages/AnnaDog2.jpeg'),
     require('../AnnaImages/AnnaDog3.jpeg'),
+    // Add more image paths as needed
+  ];
+
+  const colinImages = [
     require('../ColinImages/ColinMain.png'),
     require('../ColinImages/Colin1.png'),
     require('../ColinImages/Colin2.jpg'),
@@ -19,8 +23,29 @@ const annaImages = [
     require('../ColinImages/ColinPet1.jpg'),
     require('../ColinImages/ColinPet2.jpg'),
     require('../ColinImages/ColinPet3.jpg')
-    // Add more image paths as needed
-  ];
+  ]
+
+  const thibyaaImages = [
+    require('../ThibyaaImages/ThibyaaMain.png'),
+    require('../ThibyaaImages/Thibyaa1.jpg'),
+    require('../ThibyaaImages/Thibyaa2.jpg'),
+    require('../ThibyaaImages/Thibyaa3.jpg'),
+    require('../ThibyaaImages/Cat1.jpg'),
+    require('../ThibyaaImages/Cat2.jpg'),
+  ]
+
+  const zsoltImages = [
+    require('../ZsoltImages/ZsoltMain.png'),
+    require('../ZsoltImages/Zsolt1.png'),
+    require('../ZsoltImages/Zsolt2.png'),
+    require('../ZsoltImages/Zsolt3.jpg'),
+    require('../ZsoltImages/Zsolt4.png'),
+    require('../ZsoltImages/Zsolt5.png'),
+    require('../ZsoltImages/ZsoltDog1.jpg'),
+    require('../ZsoltImages/ZsoltDog2.jpg'),
+    require('../ZsoltImages/ZsoltHedgehog1.jpg')
+  ]
   
-  export default annaImages;
+  module.exports = {annaImages, zsoltImages, thibyaaImages, colinImages};
+
   
