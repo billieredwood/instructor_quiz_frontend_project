@@ -3,6 +3,7 @@ import Question from "../components/Question";
 import ResultsPage from "../components/ResultsPage";
 import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider, Link} from "react-router-dom";
+import annaImages from "../AnnaImages"
 
 
 const QuizContainer = () => {
@@ -20,6 +21,7 @@ const QuizContainer = () => {
     const [trainersList, setTrainersList] = useState([])
     const [trainerScores, setTrainerScores] = useState({})
     
+    console.log(annaImages)
 
     const loadQuizData = async () => {
         const response = await fetch (`http://localhost:8080/quizzes/random?userName=${stateUserName}&numberOfQuestions=3`, 
@@ -110,7 +112,7 @@ const QuizContainer = () => {
         console.log(quizData)
 
         const scores = [
-            ["Anna", quizData.annaScore, "You are fuelled by medium brewed tea with just a *drop* of milk, hobnobs & jaffa cakes."],
+            ["Anna", quizData.annaScore, "You are fuelled by medium brewed tea with just a *drop* of milk, hobnobs & jaffa cakes.", annaImages],
             ["Colin", quizData.colinScore, "You are a reserved, tortoise-loving individual of few words."],
             ["Thibyaa", quizData.thibyaaScore,"Some might say, you are a \“looks like a cinnamon roll could kill you\” kinda person." ],
             ["Zsolt", quizData.zsoltScore,"…Or in other words, a \“caffeine-overdosed golden retriever.\”" ]

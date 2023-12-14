@@ -34,10 +34,10 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQui
             <h2 className="question">Question {questionIndex+1}: {question.question}</h2>
             <form  onSubmit={handleFormSubmit}> 
                 <div id = "options">
-                    <button onClick={onButtonClick} value="A"> {question.optionA} </button>
-                    <button onClick={onButtonClick} value="B"> {question.optionB} </button>
-                    <button onClick={onButtonClick} value="C"> {question.optionC} </button>
-                    <button onClick={onButtonClick} value="D"> {question.optionD} </button>
+                    <button className="optionButtons" onClick={onButtonClick} value="A"> {question.optionA} </button>
+                    <button className="optionButtons" onClick={onButtonClick} value="B"> {question.optionB} </button>
+                    <button className="optionButtons" onClick={onButtonClick} value="C"> {question.optionC} </button>
+                    <button className="optionButtons" onClick={onButtonClick} value="D"> {question.optionD} </button>
                 </div>
                 <button type="submit"> {questionIndex < 2 ? "Next" : "Finish Quiz!" } </button>
             </form>
