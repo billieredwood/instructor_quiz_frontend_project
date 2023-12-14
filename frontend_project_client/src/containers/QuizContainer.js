@@ -111,9 +111,9 @@ const QuizContainer = () => {
 
         const scores = [
             ["Anna", quizData.annaScore, "You are fuelled by medium brewed tea with just a *drop* of milk, hobnobs & jaffa cakes."],
-            ["Colin", quizData.colinScore, "…Or in other words, a \“caffeine-overdosed golden retriever.\”"],
-            ["Thibyaa", quizData.thibyaaScore, "ou are a reserved, tortoise-loving individual of few words."],
-            ["Zsolt", quizData.zsoltScore, "Some might say, you are a \“looks like a cinnamon roll could kill you\” kinda person."]
+            ["Colin", quizData.colinScore, "You are a reserved, tortoise-loving individual of few words."],
+            ["Thibyaa", quizData.thibyaaScore,"Some might say, you are a \“looks like a cinnamon roll could kill you\” kinda person." ],
+            ["Zsolt", quizData.zsoltScore,"…Or in other words, a \“caffeine-overdosed golden retriever.\”" ]
         ]
 
         // const scoresObject = {
