@@ -51,10 +51,11 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 - Enable consistent styling across the application using CSS.
 
 ## Extensions
+- Add a ranking of the user's scores for each BNTA trainer to the Results page, underneath their trainer match. ✅
 - Enable the user to input a username that is associated & select the option to start a quiz.
 - Replace the button to 'learn more' with a drop down style display on the Results page's matched-trainer bio section.
 - Add a back button to each question on the Quiz page to enable the user navigate to the previous question with the quiz.
 - Add a menu of question number buttons from which the user can select specific questions to revisit & edit their answers to before quiz completion.
 - Add a Review Answers page to enable the user to review all of their question and answer combinations, with the option to edit before clicking 'submit'.
-- Add a ranking of the user's scores for each BNTA trainer to the Results page, underneath their trainer match.
+
 
