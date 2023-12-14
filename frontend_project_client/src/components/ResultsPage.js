@@ -41,8 +41,8 @@ const ResultsPage = ({ results }) => {
 
    
     
-    return (  
-        <>
+    return ( 
+        <div className="results-container">
             <h2>You are {results[0].name}!</h2>
             <img id = "mainImage" src = {results[0].images[0]}/>
             <p>{results[0].personality}</p>
@@ -63,7 +63,7 @@ const ResultsPage = ({ results }) => {
             {/* {otherTrainers} */}
             {/* {} */}
             
-        </>
+        </div> 
     );
 }
  

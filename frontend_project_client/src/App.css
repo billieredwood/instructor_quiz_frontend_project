@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: auto;
 }
 
 .container {
@@ -122,6 +123,8 @@ button[type="submit"]:hover {
   background-color: #CB7261;
   color: white;
   text-decoration: none;
+ overflow: auto;
+  
   
  
 }
@@ -191,7 +194,7 @@ li {
 }
 
 #homebox {
-  background-color: #f8f6f3;;
+  background-color: #f8f6f3;
   margin-inline: 20%;
   padding: 10px;
 
@@ -199,10 +202,39 @@ li {
 
 #mainImage {
   height: auto;
-  width:400px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Center the image horizontally */
+  display: block;
 }
 
 #extraImages {
   height: 200px;
   width:auto;
+  display: inline-block;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto; /* Center the images horizontally */
+}
+
+.results-container {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center the text within the container */
+  overflow: scroll;
+  min-height: 100vh
+}
+
+.see-more-btn {
+  margin-top: 10px; /* Adjust the top margin as needed */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  text-align: center; /* Center the list items */
 }
