@@ -28,8 +28,6 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 ### Step-by-step setup instructions
 
 
-### Links to any relevant diagrams such as wireframes or component diagrams
-
 ### Persona 
 - BNTA students come from a diverse background, and are passionate and curious individuals which embarked on the journey of fullstack development through a challenging but rewarding bootcamp.
 - Students are seeking balance and believes that a positive and supportive community is key to a successful learning experience.
@@ -58,4 +56,7 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 - Add a menu of question number buttons from which the user can select specific questions to revisit & edit their answers to before quiz completion.
 - Add a Review Answers page to enable the user to review all of their question and answer combinations, with the option to edit before clicking 'submit'.
 
+### Links to any relevant diagrams such as wireframes or component diagrams
+
+![image](https://github.com/billieredwood/instructor_quiz_frontend_project/assets/131786678/4b77897f-a08f-4ffd-a722-c0ebd6ba5afc)
 
