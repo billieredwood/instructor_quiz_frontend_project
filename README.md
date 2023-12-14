@@ -24,7 +24,11 @@ The app is aimed to appeal to users of varied educational backgrounds, seeking a
 ## The names and versions of any libraries used
 - [Backend_Project_API](https://github.com/AanisN10/Backend_Project_API) (Using: Spring Boot, Spring Data JPA, Spring Web, Postgresql)
 -  React (and React Router Dom)
-
+-  [CDN Fonts:](https://fonts.cdnfonts.com/css/nrt-reg)
+   ```
+   @font-face{font-family:nrt reg;font-style:normal;font-weight:400;src:local('NRT Reg'),url(https://fonts.cdnfonts.com/s/16342/NRT-Reg.woff) format('woff')}
+   ```
+   
 ## Step-by-step setup instructions
 1. Clone the project Git Hub repository in your local directory from:
    ```
