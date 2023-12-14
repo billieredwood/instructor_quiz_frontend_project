@@ -30,7 +30,9 @@ const ResultsPage = ({ results }) => {
             console.log(otherTrainers);
         }
         
-
+        const trainerImages = [...results[0].images].splice(1).map(path => {
+            return <img src = {path}/>
+        })
 
         // }else{
         //     return <p>Loading trainers...</p>
@@ -42,9 +44,17 @@ const ResultsPage = ({ results }) => {
     return (  
         <>
             <h2>You are {results[0].name}!</h2>
+            <img src = {results[0].images[0]}/>
             <p>{results[0].personality}</p>
             {showMore &&  (
-            <p>{results[0].message}</p>)}
+            <div>
+                <p>{results[0].message}</p>
+                {trainerImages}
+            </div>
+            )}
+            
+
+            
             <button className="see-more-btn" onClick={() => setShowMore(!showMore)}>
             {showMore ? 'See less' : 'See more'}
             </button>

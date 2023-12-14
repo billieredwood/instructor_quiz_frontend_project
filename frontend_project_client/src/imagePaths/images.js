@@ -11,5 +11,5 @@ const annaImages = [
     // Add more image paths as needed
   ];
   
-  export default imagePaths;
+  export default annaImages;
   

@@ -3,7 +3,7 @@ import Question from "../components/Question";
 import ResultsPage from "../components/ResultsPage";
 import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider, Link} from "react-router-dom";
-import annaImages from "../AnnaImages"
+import annaImages from "../imagePaths/images";
 
 
 const QuizContainer = () => {
@@ -139,7 +139,8 @@ const QuizContainer = () => {
             name: trainer[0],
             score: trainer[1],
             message: trainerData.message,
-            personality: trainer[2]
+            personality: trainer[2],
+            images: trainer[3]
         }
         console.log(trainerObject)
         setTrainersList([...trainersList, trainerObject])
