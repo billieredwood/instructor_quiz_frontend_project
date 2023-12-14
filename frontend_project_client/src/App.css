@@ -89,3 +89,9 @@ button[type="submit"]:hover {
   transform: scale(1.05);
 }
 
+.trainers {
+  max-width: 100%; /* Ensure the image doesn't exceed its natural size */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Remove any extra spacing around the image */
+  margin: 0 auto; /* Center the image horizontally */
+}

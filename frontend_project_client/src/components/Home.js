@@ -14,7 +14,7 @@ const Home = ({handleStartQuiz}) => {
             <hr/>
             <section className="main-homepage">
                 <h1 className="home">BNTA TRAINER QUIZ</h1>
-                <img className="App-logo" src={logo} alt="Image of trainers"/>
+                <img className="trainers" src={require('../assets/trainers.jpg').default} alt="Image of trainers" />
                 <p>Discover your BNTA trainer match with our interactive quiz!</p>
                 <p>Enter your username and click start:</p>
                 <form id="homepage-form">
