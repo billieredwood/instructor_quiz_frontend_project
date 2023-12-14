@@ -31,7 +31,7 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQui
 
     return (  
         <>
-            <h2>Question {questionIndex+1}: {question.question}</h2>
+            <h2 className="question">Question {questionIndex+1}: {question.question}</h2>
             <form  onSubmit={handleFormSubmit}> 
                 <div id = "options">
                     <button onClick={onButtonClick} value="A"> {question.optionA} </button>
