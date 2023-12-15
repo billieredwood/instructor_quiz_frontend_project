@@ -28,7 +28,7 @@ const ResultsPage = ({ results }) => {
             return(
             <li key={index}>
                 <p>{trainer.name}</p>
-                <p>{trainer.score}</p>
+                <p>Score: {trainer.score}</p>
                 <p>{trainer.personality}</p>
 
             </li>)
