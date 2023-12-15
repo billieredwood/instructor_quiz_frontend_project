@@ -9,8 +9,8 @@ import {annaImages, zsoltImages, thibyaaImages, colinImages} from "../imagePaths
 const QuizContainer = () => {
     const [stateUserName, setStateUserName] = useState("")
     const [currentQResponse, setCurrentQResponse] = useState({
-        // questionNumber: null, 
-        // userAnswer: ""
+        questionNumber: null, 
+        userAnswer: ""
     }) //null as opposed to false bc a is fed int as a response
     const [currentQ, setCurrentQ] = useState({})
     // const [qAnswered, setQAnswered] = useState([])
@@ -59,6 +59,10 @@ const QuizContainer = () => {
 
     }, [questionIndex])
 
+    useEffect(()=>{
+
+    },[currentQResponse])
+
     useEffect(() =>{
         if(trainerScores.length === 4){
             createTrainersList();
@@ -84,11 +88,6 @@ const QuizContainer = () => {
             // setQuestionIndex(0);
         }
     }
-    
-    // const startQuiz = async () => {
-    //     const quiz = await fetch (`http://localhost:8080/quizzes/startQuiz/${currentQuiz.id}`)
-    //     localStorage.setItem("questionIndex", 0) 
-    // }
 
     const postAnswer = async () => {
         console.log(currentQResponse)
@@ -98,6 +97,7 @@ const QuizContainer = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(currentQResponse)
         })
+        setCurrentQResponse(null)
         localStorage.setItem("questionIndex", parseInt(localStorage.getItem("questionIndex")) + 1) // updating counter by 1 
         setQuestionIndex(questionIndex+1)
     }
@@ -120,13 +120,6 @@ const QuizContainer = () => {
             ["Thibyaa", quizData.thibyaaScore,"Some might say, you are a \“looks like a cinnamon roll could kill you\” kinda person.", thibyaaImages],
             ["Zsolt", quizData.zsoltScore,"…Or in other words, a \“caffeine-overdosed golden retriever.\”", zsoltImages ]
         ]
-
-        // const scoresObject = {
-        //     Anna: quizData.annaScore,
-        //     Colin: quizData.colinScore,
-        //     Thibyaa: quizData.thibyaaScore,
-        //     Zsolt: quizData.zsoltScore
-        // }
 
         const sortedScores = scores.sort((a,b)=>b[1]-a[1])
         console.log(sortedScores)
@@ -164,7 +157,7 @@ const QuizContainer = () => {
         // if (currentQuiz) {
         //     startQuiz();
         // }
-        
+        setCurrentQResponse(null)
         setCurrentQ(null)
         setTrainersList([])
         loadQuizData();
@@ -201,8 +194,7 @@ const QuizContainer = () => {
                         onButtonClick = {handleQResponse}
                         postAnswer = {postAnswer}
                         questionIndex = {questionIndex}
-                        finishQuiz = {finishQuiz}
-                        checkQuiz = {checkQuiz}
+                        currentQResponse = {currentQResponse}
                     />
                 }, 
                 {
