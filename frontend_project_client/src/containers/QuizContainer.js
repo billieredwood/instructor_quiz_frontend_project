@@ -24,7 +24,7 @@ const QuizContainer = () => {
     console.log(annaImages)
 
     const loadQuizData = async () => {
-        const response = await fetch (`http://localhost:8080/quizzes/random?userName=${stateUserName}&numberOfQuestions=3`, 
+        const response = await fetch (`http://localhost:8080/quizzes/random?userName=${stateUserName}&numberOfQuestions=5`, 
         {
             method: "POST",
             headers: {"Content-Type": "application/json"}
@@ -32,6 +32,8 @@ const QuizContainer = () => {
         const quizData = await response.json()
         setCurrentQ(quizData.questions[0])
         setCurrentQuiz(quizData)
+        localStorage.setItem("questionIndex", 0)
+        setQuestionIndex(0);
 
         // console.log(currentQuiz)
     }
@@ -47,7 +49,7 @@ const QuizContainer = () => {
 
     useEffect(() => {
         console.log(questionIndex);
-        if(questionIndex > 2) {
+        if(questionIndex > 4) {
             finishQuiz()
             setCurrentQ(null)
         }
@@ -78,8 +80,8 @@ const QuizContainer = () => {
             const quiz = await fetch(`http://localhost:8080/quizzes/startQuiz/${currentQuiz.id}`);
             console.log(quiz)
             // const data = await quiz.json()
-            localStorage.setItem("questionIndex", 0)
-            setQuestionIndex(0);
+            // localStorage.setItem("questionIndex", 0)
+            // setQuestionIndex(0);
         }
     }
     

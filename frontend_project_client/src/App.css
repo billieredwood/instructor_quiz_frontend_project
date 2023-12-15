@@ -195,6 +195,10 @@ li {
   font-size:x-large;
 }
 
+.optionButtons:hover {
+  background-color: #c161a1;
+}
+
 .about-text {
   padding-bottom: 5%;
   padding-top: 2.5%;

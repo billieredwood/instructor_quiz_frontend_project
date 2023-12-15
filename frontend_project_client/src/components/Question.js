@@ -20,7 +20,7 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQui
     const handleFormSubmit = ((event) => {
         event.preventDefault();
         postAnswer()
-        if(questionIndex >= 2) {
+        if(questionIndex >= 4) {
             navigate("/question/results")
         } 
     })
@@ -44,7 +44,7 @@ const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQui
                     <button className="optionButtons" onClick={onButtonClick} value="C"> {question.optionC} </button>
                     <button className="optionButtons" onClick={onButtonClick} value="D"> {question.optionD} </button>
                 </div>
-                <button type="submit"> {questionIndex < 2 ? "Next" : "Finish Quiz!" } </button>
+                <button type="submit"> {questionIndex < 4 ? "Next" : "Finish Quiz!" } </button>
             </form>
             
             
