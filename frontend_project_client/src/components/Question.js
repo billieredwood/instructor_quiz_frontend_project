@@ -1,13 +1,18 @@
 import { useState } from "react";
 import Home from "./Home";
 import { Link, useNavigate } from "react-router-dom";
+import tortoise from "../ColinImages/ColinPet3.jpg"
 
 const Question = ({question, onButtonClick, postAnswer, questionIndex, finishQuiz, checkQuiz}) => {
     
     const navigate = useNavigate();
     
     if (!question){
-        return <p>Loading...</p>
+        return (
+            <>
+            <p>Loading...</p>
+            <img className="loading" src={tortoise} />
+            </>)
     }
 
 

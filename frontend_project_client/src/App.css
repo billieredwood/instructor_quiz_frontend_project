@@ -124,12 +124,19 @@ button[type="submit"]:hover {
   color: white;
   text-decoration: none;
   overflow: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* height: 50px; */
 }
 
 .homepage:hover {
   background-color: #c66753;
   transform: scale(1.05);
   border: solid #c76b58;
+}
+
+.home{
+  font-weight:900;
+  font-size: xx-large;
 }
 
 #username {
@@ -148,6 +155,7 @@ button[type="submit"]:hover {
 
 .question{
   color: #242038;
+  font-size: xx-large;
 }
 
 p,h1,h2,h3,h4{
@@ -173,6 +181,7 @@ li {
 
 #slogan:hover {
   color: #a874e2;
+  transform: scale(1.05);
 }
 
 .home {
@@ -181,7 +190,9 @@ li {
 
 .optionButtons {
   background-color: white;
-  color: #242038
+  color: #242038;
+  height: 200px;
+  font-size:x-large;
 }
 
 .about-text {
@@ -233,4 +244,27 @@ ul {
 
 ul li {
   text-align: center; /* Center the list items */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading {
+    animation: logo-spin infinite 2s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading{
+  width: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin:auto
 }

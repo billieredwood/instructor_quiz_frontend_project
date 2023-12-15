@@ -49,6 +49,7 @@ const QuizContainer = () => {
         console.log(questionIndex);
         if(questionIndex > 2) {
             finishQuiz()
+            setCurrentQ(null)
         }
         else if(currentQuiz){
             setCurrentQ(currentQuiz.questions[questionIndex])
