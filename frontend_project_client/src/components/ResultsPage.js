@@ -58,14 +58,9 @@ const ResultsPage = ({ results }) => {
                 {trainerImages}
             </div>
             )}
-
             
             <button className="see-more-btn" onClick={() => setShowMore(!showMore)}>
             {showMore ? 'See less' : 'See more'}
-            </button>
-
-            <button className="see-more-btn" onClick={() => setShowTrainers(!showTrainers)}>
-            {showTrainers ? 'See less' : 'See how you compare to other trainers!'}
             </button>
             
             {showTrainers && (
@@ -76,9 +71,11 @@ const ResultsPage = ({ results }) => {
                 </ul>
             </>
             )}
-            {/* {otherTrainers} */}
-            {/* {} */}
-            
+
+            <button className="see-more-btn" onClick={() => setShowTrainers(!showTrainers)}>
+            {showTrainers ? 'See less' : 'See how you compare to other trainers!'}
+            </button>
+
         </div> 
     );
 }
