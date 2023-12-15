@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
-import trainers from "../trainers.jpg"
+import trainers from "../trainerscropped.jpeg"
 
 
 const Home = ({handleStartQuiz}) => {
@@ -21,16 +21,20 @@ const Home = ({handleStartQuiz}) => {
             <hr/>
             <section className="main-homepage">
                 <h1 className="home">BNTA TRAINER QUIZ</h1>
-                <img className="trainers" src={trainers} alt="Image of trainers" />
-                <p className="about-text"> Discover your BNTA trainer match with our interactive quiz!</p>
-                <p className="about-text"> Enter your username and click start:</p>
-                <form id="homepage-form">
-                    <input id="username"
-                        placeholder="Enter a username" 
-                        type="text"
-                    />
+                <div id = "homebox"> <img className="trainers" src={trainers} alt="Image of trainers" />
+                 
+                    <p className="about-text"> Discover your BNTA trainer match with our interactive quiz!</p>
+                    {/* <p className="about-text"> Enter your username and click start:</p> */}
+                    <form id="homepage-form">
+                        {/* <input id="username"
+                            placeholder="Enter a username" 
+                            type="text"
+                        /> */}
                     <Link to="/question" onClick={handleStartQuiz}><button >Start quiz</button></Link>
-                </form>
+                    </form>
+                </div>
+                    <p id = "slogan"> .map((you) {"=>"} trainer twin) </p>
+                
             </section>
         </>
         )}

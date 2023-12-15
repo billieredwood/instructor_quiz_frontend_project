@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/nrt-reg');
+@import url('https://fonts.cdnfonts.com/css/bulgeria');
 
 body {
   font-family: 'Arial', sans-serif;
@@ -9,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
+  overflow: auto;
 }
 
 .container {
@@ -22,7 +24,7 @@ body {
 }
 
 h1 {
-  color: #4CAF50;
+  color: #c76b58;
   text-align: center;
 }
 
@@ -48,7 +50,7 @@ h1 {
 }
 
 .option:hover {
-  background-color: #45a049;
+  background-color: #d498d4;
   transform: scale(1.05);
 }
 
@@ -58,7 +60,6 @@ h1 {
 }
 
 #options {
-  /* background-color: #D9D0DE; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -69,18 +70,20 @@ h1 {
 }
 
 button {
-  background-color: #fff;
-  color: #242038;
-  padding: 15px;
+  background-color: #d4b8f4;;
+  color: black;
+  font-weight: bold;
+  font-size:medium;
+  padding: 25px;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #d498d4;
   transform: scale(1.05);
 }
 
@@ -91,14 +94,19 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #f3832e;
   transform: scale(1.05);
 }
 
 /* Retaining the original styling for trainers and about-text */
 .trainers {
-  max-width: 30%;
+  max-width: 80%;
   height: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .about-text {
@@ -115,13 +123,20 @@ button[type="submit"]:hover {
   background-color: #CB7261;
   color: white;
   text-decoration: none;
-  position: absolute top;
+  overflow: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* height: 50px; */
 }
 
 .homepage:hover {
-  background-color: #45a049;
+  background-color: #c66753;
   transform: scale(1.05);
-  border: solid #4CAF50;
+  border: solid #c76b58;
+}
+
+.home{
+  font-weight:900;
+  font-size: xx-large;
 }
 
 #username {
@@ -140,15 +155,124 @@ button[type="submit"]:hover {
 
 .question{
   color: #242038;
+  font-size: xx-large;
 }
 
 p,h1,h2,h3,h4{
   text-align: center;
+  font-family: 'NRT Reg', sans-serif;
 }
 
 li {
   list-style: none;
   display: grid;
   justify-content: space-evenly;
+  border: solid  #f2b688;
+  padding: 15px;
+  border-radius: 20px;
+}
 
+#slogan {
+  color: #1929e0;
+  font-family: 'Bulgeria', sans-serif;
+  padding-top: 2.5%;
+
+}
+
+#slogan:hover {
+  color: #a874e2;
+  transform: scale(1.05);
+}
+
+.home {
+  color: #982f1a;
+}
+
+.optionButtons {
+  background-color: white;
+  color: #242038;
+  height: 200px;
+  font-size:x-large;
+}
+
+.optionButtons:hover {
+  background-color: #c161a1;
+}
+
+#clicked{
+  background-color: #c161a1;
+}
+
+.about-text {
+  padding-bottom: 5%;
+  padding-top: 2.5%;
+}
+
+#homebox {
+  background-color: #f8f6f3;
+  margin-inline: 20%;
+  padding: 10px;
+
+}
+
+#mainImage {
+  height: auto;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Center the image horizontally */
+  display: block;
+}
+
+#extraImages {
+  height: 200px;
+  width:auto;
+  display: inline-block;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto; /* Center the images horizontally */
+}
+
+.results-container {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center the text within the container */
+  overflow: scroll;
+  min-height: max-content;
+}
+
+.see-more-btn {
+  margin-top: 10px; /* Adjust the top margin as needed */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  text-align: center; /* Center the list items */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading {
+    animation: logo-spin infinite 2s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading{
+  width: 100px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin:auto
 }
